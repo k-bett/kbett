@@ -21,9 +21,7 @@ class ProfilePage extends StatelessWidget {
                     'https://media1.s-nbcnews.com/j/newscms/2019_14/2808721/190403-joaquin-phoenix-joker-cs-1005a_4715890895d3fad1f9e7ccec85386821.fit-760w.jpg'),
                 backgroundColor: Theme.of(context).primaryColor,
               ),
-              SizedBox(
-                width: 20,
-              ),
+              SizedBox(width: 20),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -32,7 +30,7 @@ class ProfilePage extends StatelessWidget {
                       style: AppTheme.h2Style
                           .copyWith(fontWeight: FontWeight.bold)),
                   SizedBox(height: 20),
-                  Text('Loyal Reader', style: AppTheme.h5Style),
+                  Text('Movie Watcher', style: AppTheme.h5Style),
                 ],
               )
             ],
@@ -42,7 +40,7 @@ class ProfilePage extends StatelessWidget {
             children: <Widget>[
               _estimateWidget('Followers', '826'),
               _estimateWidget('Following', '251'),
-              _estimateWidget('News Read', '81K'),
+              _estimateWidget('Videos Watched', '81K'),
             ],
           ),
           SizedBox(height: 30),
@@ -127,6 +125,65 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
+  Widget _subscriptionPlan(BuildContext context) {
+    // Dummy data for illustration
+    String currentPlan = "Premium Plan";
+    int daysLeft = 10;
+
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 5),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text("Subscription Plan",
+              style: AppTheme.h4Style.copyWith(fontWeight: FontWeight.bold)),
+          SizedBox(height: 10),
+          Text("Current Plan: $currentPlan", style: AppTheme.h5Style),
+          Text("Days Left: $daysLeft", style: AppTheme.h5Style),
+        ],
+      ),
+    );
+  }
+
+  Widget _upcomingEvents(BuildContext context) {
+    // Dummy data for illustration
+    List<String> events = ["Event 1: March 20, 2025", "Event 2: April 15, 2025"];
+
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 5),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text("Upcoming Events",
+              style: AppTheme.h4Style.copyWith(fontWeight: FontWeight.bold)),
+          SizedBox(height: 10),
+          ...events.map((event) => Text(event, style: AppTheme.h5Style)).toList(),
+        ],
+      ),
+    );
+  }
+
+  Widget _videoHistory(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 5),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text("Video Watch History",
+              style: AppTheme.h4Style.copyWith(fontWeight: FontWeight.bold)),
+          SizedBox(height: 10),
+          // Placeholder for date, month, and year filters
+          Text("Date, Month, Year Filters Here", style: AppTheme.h5Style),
+          // Placeholder for visibility options
+          Text("Visibility: Private (Default)", style: AppTheme.h5Style),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -154,16 +211,13 @@ class ProfilePage extends StatelessWidget {
                             index: 1),
                         _settingRow(context, Icons.notifications,
                             'Notification', false),
-                        // SizedBox(height: 10),
-                        _settingRow(
-                            context, Icons.share, 'Social Media', false),
+                        _settingRow(context, Icons.share, 'Social Media', false),
                         SizedBox(height: 5),
-                        Divider(
-                          indent: 20,
-                          endIndent: 20,
-                          height: 0,
-                        ),
+                        Divider(indent: 20, endIndent: 20, height: 0),
                         SizedBox(height: 5),
+                        _subscriptionPlan(context),
+                        _upcomingEvents(context),
+                        _videoHistory(context),
                         _logout(context, Icons.exit_to_app, 'Logout'),
                       ],
                     ),
