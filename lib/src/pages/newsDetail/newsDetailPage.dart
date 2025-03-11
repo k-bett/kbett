@@ -108,7 +108,7 @@ class NewsDetailPage extends StatelessWidget {
             }
             if (state is LoadedArticle) {
               if (state.selectedArticle == null) {
-                return Text('No content avilable');
+                return Center(child: Text('No content available'));
               } else {
                 return _body(
                   context,
