@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'detail_event.dart';
 import 'detail_state.dart';
 
@@ -11,7 +10,8 @@ class DetailBloc extends Bloc<NewsDetailEvent, DetailState> {
     if (event is SelectNewsForDetail) {
       try {
         yield LoadedArticle(selectedArticle: event.article);
-      } catch (_) {
+      } catch (error) {
+        print('Error loading article details: $error');
         yield FailureDetail();
       }
     }
