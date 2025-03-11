@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class LightColor {
   static const Color background = Color(0XFFFFFFFF);
   static const Color purple = Color(0xFF8E7FE0);
