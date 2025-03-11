@@ -1,5 +1,5 @@
 class Constant {
-  static const String newsApiKey = 'cab817200f92426bacb4edd2373e82ef';
-  static const String baseUrl = 'https://newsapi.org/v2/';
-  static const String topHeadLine = '/top-headlines';
+  static const String apiKey = 'your_new_api_key';
+  static const String baseUrl = 'https://newapi.com/v1/';
+  static const String topHeadLine = '/top-headlines'; // Update or remove if not needed
 }
