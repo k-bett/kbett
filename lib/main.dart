@@ -5,10 +5,7 @@ import 'package:flutter_news_app/src/commonWidget/bloc/bloc.dart';
 import 'package:flutter_news_app/src/theme/bloc/theme_bloc.dart';
 import 'package:flutter_news_app/src/theme/bloc/theme_state.dart';
 import 'package:flutter_news_app/src/theme/theme.dart';
-import 'src/helpers/routes.dart';
-import 'src/pages/homePage/bloc/bloc.dart';
-import 'src/pages/newsDetail/bloc/bloc.dart';
-import 'src/resources/repository.dart';
+import 'package:kbett/src/widgets/bunny_video_player.dart'; // Import BunnyVideoPlayer
 
 void main() {
   BlocObserver observer = SimpleBlocObserver();
@@ -42,7 +39,10 @@ class MyApp extends StatelessWidget {
                 title: 'Flutter Demo',
                 theme: apptheme,
                 debugShowCheckedModeBanner: false,
-                routes: Routes.getRoute(),
+                routes: {
+                  ...Routes.getRoute(),
+                  '/video': (context) => BunnyVideoPlayer(videoId: 'YOUR_VIDEO_ID'), // Add video player route
+                },
               );
             },
           );
