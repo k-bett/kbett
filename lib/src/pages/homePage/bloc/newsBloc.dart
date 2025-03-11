@@ -5,7 +5,7 @@ import 'package:flutter_news_app/src/resources/repository.dart';
 import 'newsEvent.dart';
 import 'newsState.dart';
 
-class NewsBloc extends Bloc<NewsEvent, NewsState> {
+class NewsBloc extends Bloc<NewsEvent, NewsState>{
   final Repository repository;
 
   NewsBloc({this.repository}) : super(Loading());
