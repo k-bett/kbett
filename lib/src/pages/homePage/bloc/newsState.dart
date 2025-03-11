@@ -18,10 +18,10 @@ class Loaded extends NewsState {
   const Loaded({@required this.items, this.type});
 
   @override
-  List<Object> get props => [items];
+  List<Object> get props => [items, type];
 
   @override
-  String toString() => 'Loaded { items: ${items.length} }';
+  String toString() => 'Loaded { items: ${items.length}, type: $type }';
 }
 
 class Failure extends NewsState {}
