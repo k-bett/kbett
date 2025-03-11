@@ -1,8 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_news_app/src/models/newsResponseModel.dart';
 
-
-abstract class NewsDetailEvent extends Equatable{
+abstract class NewsDetailEvent extends Equatable {
   const NewsDetailEvent();
 
   @override
@@ -21,6 +20,6 @@ class SelectNewsForDetailed extends NewsDetailEvent {
   final Article article;
   const SelectNewsForDetailed({this.article});
 
-    @override
+  @override
   String toString() => 'SelectNewsForDetailed news { Title: ${article.title} }';
 }
