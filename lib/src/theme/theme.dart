@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_news_app/src/theme/color/dark_color.dart';
 
 import 'color/lightColor.dart';
-
 class AppTheme {
   const AppTheme();
   static ThemeData lightTheme = ThemeData(
